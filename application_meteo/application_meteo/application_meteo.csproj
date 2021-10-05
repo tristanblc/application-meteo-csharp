@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icons8-weather-50.png" />
+    <None Remove="rain.jpg" />
+    <None Remove="raine.png" />
+    <None Remove="snow.png" />
+    <None Remove="soleil.png" />
+    <None Remove="sunset.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons8-weather-50.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="rain.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="raine.png" />
+    <Resource Include="snow.png" />
+    <Resource Include="soleil.png" />
+    <Resource Include="sunset.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
