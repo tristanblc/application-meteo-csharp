@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jcepRLo8Pavem3k8Ays9NFOxUms3FjOjb6xd2yYzAjxOzsiRzP1rm2aWs0mSf416ehLlauRKmGptxK9TZ7zrPg==",
+  "dgSpecHash": "EHTBroa7sZe7FfmaBj4/OSLpr7+x0mT3UdLeKpQiqyYB8HRqgRGtxfxjADhbebUTu09AeBR3Elti1EcTqHqADw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Blanc\\Documents\\GitHub\\logiciel-audio-c-\\application_meteo\\application_meteo\\application_meteo.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Blanc\\Documents\\GitHub\\application-meteo-csharp\\application_meteo\\application_meteo\\application_meteo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Blanc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

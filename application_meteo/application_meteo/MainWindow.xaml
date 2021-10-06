@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:application_meteo"
         mc:Ignorable="d"
         Title="Application météo" Height="450" Width="800" WindowStyle="ToolWindow" Icon="/icons8-weather-50.png">
     <Grid>
@@ -19,27 +18,24 @@
                     <Image Source="/icons8-weather-50.png" Height="45" Width="45" />
                     <Label Content="Météo" Foreground="#FF0C62AA" Height="36" Width="87" FontSize="25" FontWeight="Bold" VerticalAlignment="Center"/>
                 </StackPanel>
-               
-                <Separator Height="25" Margin="0">
 
-                </Separator>
+                <StackPanel Orientation="Vertical" Height="90" RenderTransformOrigin="0.887,0.422">
 
-                <Label Margin="0.5" Content="Enter a city :" Foreground="#FF0C62AA" Height="45" Width="140" FontSize="16" VerticalAlignment="Top" FontWeight="Normal"/>
-                <TextBox Margin="5" Height="25" Name="cityText" Text="ede"  >
-                    <TextBox.InputBindings>
-                        <MouseBinding Command="" MouseAction="LeftClick" />
-                    </TextBox.InputBindings>
-                </TextBox>
-                <Button Content="SEARCH" Margin="5" Name="btnSearch" Click="btnSearch_Click"></Button>
-               
-                <Separator Height="25" Margin="0">
+                    <TextBox Name="cityText"  Width="130">
 
-                </Separator>
+                    </TextBox>
 
-                <Button Name="btnInfos"  Height="20" Margin="5" Click="btnInfos_Click">INFOS</Button>
-                <Label Margin="0.5" Content="Software version 0.0.1" Foreground="#FF0C62AA" Height="45" Width="140" VerticalAlignment="Center" FontWeight="Normal" HorizontalAlignment="Left"/>
-                <Separator Height="25" Margin="0">
-                </Separator>
+                    <Button Content="SEARCH" Margin="5" Name="btnSearch" Click="btnSearch_Click"></Button>
+
+
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Height="90" RenderTransformOrigin="0.887,0.422">
+                    <Button Name="btnInfos"  Height="20" Margin="5" Click="btnInfos_Click">INFOS</Button>
+                </StackPanel>
+
+
+
 
             </StackPanel>
 
@@ -51,7 +47,7 @@
                         <DropShadowEffect/>
                     </Label.Effect>
                 </Label>
-                <Label  Name="Temperature" Margin="0.5" Content="30°"  Height="81" Width="174" FontWeight="Normal" FontSize="60" Background="Transparent" Foreground="#FFE6E2E2" Canvas.Top="55" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Canvas.Left="10" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Label  Name="Temperature" Margin="0.5" Content="30°"  Height="80" Width="256" FontWeight="Normal" FontSize="60" Background="Transparent" Foreground="#FFE6E2E2" Canvas.Top="55" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Canvas.Left="-10">
                     <Label.Effect>
                         <DropShadowEffect/>
                     </Label.Effect>
@@ -61,44 +57,43 @@
                         <DropShadowEffect/>
                     </Label.Effect>
                 </Label>
-                <Label Name="Temps" Margin="0.5" Content="Nuageux"  Height="82" Width="494" FontWeight="Normal" FontSize="20" Background="Transparent" Foreground="#FFE6E2E2" Canvas.Left="142" Canvas.Top="44" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" RenderTransformOrigin="0.558,-0.677">
+                <Label Name="weatherDesc" Margin="0.5" Content="Nuageux"  Height="82" Width="494" FontWeight="Normal" FontSize="20" Background="Transparent" Foreground="#FFE6E2E2" Canvas.Left="142" Canvas.Top="44" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" RenderTransformOrigin="0.558,-0.677">
                     <Label.Effect>
                         <DropShadowEffect/>
                     </Label.Effect>
                 </Label>
-                <Label Name="Rafale" Margin="0.5" Content="25 km/h"  Height="82" Width="284" FontWeight="Normal" FontSize="25" Background="Transparent" Foreground="#FFE6E2E2" Canvas.Left="-142" Canvas.Top="102" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" RenderTransformOrigin="0.558,-0.677">
+                <Label Name="Rafale" Margin="0.5"  Height="82" Width="284" FontWeight="Normal" FontSize="25" Background="Transparent" Foreground="#FFE6E2E2" Canvas.Left="-142" Canvas.Top="102" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" RenderTransformOrigin="0.558,-0.677">
                     <Label.Effect>
                         <DropShadowEffect/>
                     </Label.Effect>
+
                 </Label>
             </Canvas>
             <DockPanel DockPanel.Dock="Bottom" Height="183" Margin="0,20,0,0">
                 <ScrollViewer Margin="0,25,0,0">
                     <StackPanel Width="215" Margin="0,20,0,0">
                         <Label Content="News" HorizontalAlignment="Center" FontWeight="Bold"></Label>
-                        <Label Content="Exemple d'actu sur la ville"></Label>
-                        <Label Content="Exemple d'actu sur la ville"></Label>
-                        <Label Content="Exemple d'actu sur la ville"></Label>
-                        <Label Content="Exemple d'actu sur la ville"></Label>
-                        <Label Content="Exemple d'actu sur la ville"></Label>
-                        <Label Content="Exemple d'actu sur la ville"></Label>
-                        <Label Content="Exemple d'actu sur la ville"></Label>
+                        <StackPanel Width="215" Margin="0,20,0,0">
+
+                            <ListView Name="articlesListes">
+                            </ListView>
+                        </StackPanel>
                     </StackPanel>
                 </ScrollViewer>
                 <StackPanel Width="135" RenderTransformOrigin="-0.214,0.48"  Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
                     <Label Name="forecast0" Content="Mon" FontSize="25" Width="63" FontWeight="Bold"/>
                     <Image Source="/soleil.png" Height="59" Width="62" HorizontalAlignment="Center"/>
-                    <Label Content="25°" FontSize="25" Width="47"/>
+                    <Label Content="25°" FontSize="25" Width="57" Name="forecast0_temp"/>
                 </StackPanel>
                 <StackPanel Width="135" RenderTransformOrigin="-0.214,0.48"  Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
                     <Label  Name="forecast1" Content="Tue" FontSize="25" Width="63" FontWeight="Bold"/>
                     <Image Source="/raine.png" Height="59" Width="62" HorizontalAlignment="Center"/>
-                    <Label Content="25°" FontSize="25" Width="47"/>
+                    <Label Content="25°" FontSize="25" Width="47" Name="forecast1_temp"/>
                 </StackPanel>
                 <StackPanel Width="135" RenderTransformOrigin="-0.214,0.48"  Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
                     <Label Name="forecast2" Content="Wed" FontSize="25" Width="63" FontWeight="Bold"/>
                     <Image Source="/snow.png" Height="59" Width="62" HorizontalAlignment="Center"/>
-                    <Label Content="25°" FontSize="25" Width="47"/>
+                    <Label Content="25°" FontSize="25" Width="47" Name="forecast2_temp"/>
                 </StackPanel>
 
             </DockPanel>
