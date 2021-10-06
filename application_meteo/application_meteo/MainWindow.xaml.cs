@@ -25,7 +25,7 @@ namespace application_meteo
         public string baseApi = "https://goweather.herokuapp.com/weather/Paris";
         public string baseApiNews1 = "https://newsapi.org/v2/everything?q=";
         public string baseApiNews2 = "&from=2021-10-06&sortBy=popularity&apiKey=";
-        public string city;
+        public string city ="paris";
         public string json;
 
         public string jsonString;
@@ -36,8 +36,9 @@ namespace application_meteo
             //SetHeaderImg();
             SetDay();
             GetApiResponse();
+            LoadNews();
 
-         
+
 
         }
 
@@ -62,11 +63,7 @@ namespace application_meteo
             JObject o = JObject.Parse(jsonString);
             //MessageBox.Show(jsonString + city);
             weatherDesc.Content = o["description"];
-            if (o["description"].ToString().Contains("cloud"))
-            {
-             
-            }
-            if (o["description"].ToString().Contains("sun"))
+            if (o["description"].ToString().Contains("sunny"))
             {
                 headerImage.Source = new BitmapImage(new Uri(@"/sunset.jpg", UriKind.Relative));
             }
@@ -101,11 +98,12 @@ namespace application_meteo
             }
             JObject o = JObject.Parse(json);
       
-            List<Articles> lesArticles = new List<Articles>();
+            List<Article> lesArticles = new List<Article>();
             for (int i = 0; i < o["articles"].Count(); i++)
             {
                 string articleTitle = o["articles"][i]["title"].ToString();
-                lesArticles.Add(new Articles() { Titre = articleTitle });
+         
+                lesArticles.Add(new Article() { Titre = articleTitle});
             }
 
             articlesListes.ItemsSource = lesArticles;
@@ -160,11 +158,7 @@ namespace application_meteo
             LoadNews();
         }
 
-        private void btnInfos_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Developpé par tristan blanc", "Crédits", MessageBoxButton.OK, MessageBoxImage.Question);
-        }
-
+  
        
     }
 
@@ -172,7 +166,7 @@ namespace application_meteo
 }
 
 
-public class Articles {
+public class Article {
 
     private string titre;
 

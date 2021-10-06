@@ -30,9 +30,7 @@
 
 
                 </StackPanel>
-                <StackPanel Orientation="Vertical" Height="90" RenderTransformOrigin="0.887,0.422">
-                    <Button Name="btnInfos"  Height="20" Margin="5" Click="btnInfos_Click">INFOS</Button>
-                </StackPanel>
+
 
 
 
@@ -83,17 +81,17 @@
                 <StackPanel Width="135" RenderTransformOrigin="-0.214,0.48"  Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
                     <Label Name="forecast0" Content="Mon" FontSize="25" Width="63" FontWeight="Bold"/>
                     <Image Source="/soleil.png" Height="59" Width="62" HorizontalAlignment="Center"/>
-                    <Label Content="25°" FontSize="25" Width="57" Name="forecast0_temp"/>
+                    <Label Content="25°" FontSize="25" Width="90" Name="forecast0_temp"/>
                 </StackPanel>
                 <StackPanel Width="135" RenderTransformOrigin="-0.214,0.48"  Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
                     <Label  Name="forecast1" Content="Tue" FontSize="25" Width="63" FontWeight="Bold"/>
                     <Image Source="/raine.png" Height="59" Width="62" HorizontalAlignment="Center"/>
-                    <Label Content="25°" FontSize="25" Width="47" Name="forecast1_temp"/>
+                    <Label Content="25°" FontSize="25" Width="84" Name="forecast1_temp"/>
                 </StackPanel>
                 <StackPanel Width="135" RenderTransformOrigin="-0.214,0.48"  Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
                     <Label Name="forecast2" Content="Wed" FontSize="25" Width="63" FontWeight="Bold"/>
                     <Image Source="/snow.png" Height="59" Width="62" HorizontalAlignment="Center"/>
-                    <Label Content="25°" FontSize="25" Width="47" Name="forecast2_temp"/>
+                    <Label Content="25°" FontSize="25" Width="95" Name="forecast2_temp"/>
                 </StackPanel>
 
             </DockPanel>
